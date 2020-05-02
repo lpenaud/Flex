@@ -697,7 +697,7 @@ div.topic {
   background-color: @light-grey;
   box-sizing: border-box;
 
-  p.topic-title {
+  > p.topic-title {
     font-size: 1.2em;
     line-height: 1.1;
     font-weight: bold;
@@ -706,6 +706,32 @@ div.topic {
     background-color: @med-grey;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+    cursor: pointer;
+  }
+
+  > p.topic-title::before {
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    font-family: "Font Awesome 5 Free";
+    content: "\f0fe\00a0";
+    color: @light-grey;
+  }
+
+  > p.topic-title:hover::before {
+    color: @grey;
+  }
+
+  > input.toc-toogle {
+    display: none;
+  }
+
+  > input.toc-toogle:checked ~ ul {
+    display: none;
+  }
+
+  > input.toc-toogle:checked ~ p.topic-title::before {
+    content: "\f146\00a0";
   }
 
   ul {
@@ -719,7 +745,6 @@ div.topic {
     color: @grey;
     display: block;
     padding: 0.25rem 0.75rem;
-    border-bottom: 1px solid @med-grey;
   }
 
   a:hover {
