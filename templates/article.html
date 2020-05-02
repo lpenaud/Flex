@@ -106,9 +106,9 @@
     topicCheckbox.type = 'checkbox';
     topicCheckbox.classList.add('toc-toogle');
     topicTitle.parentElement.insertBefore(topicCheckbox, topicTitle);
-    topicCheckbox.onclick = function () {
+    topicTitle.addEventListener('click', function () {
       topicCheckbox.checked = !topicCheckbox.checked;  
-    }
+    });
   })();
 </script>
 {% endblock %}
