@@ -695,7 +695,6 @@ div.topic {
   border: 1px solid @light-grey;
   border-radius: 4px;
   background-color: @light-grey;
-  box-sizing: border-box;
 
   > p.topic-title {
     font-size: 1.2em;
@@ -714,7 +713,7 @@ div.topic {
     font-variant: normal;
     text-rendering: auto;
     font-family: "Font Awesome 5 Free";
-    content: "\f0fe\00a0";
+    content: "\f146\00a0";
     color: @light-grey;
   }
 
@@ -722,16 +721,16 @@ div.topic {
     color: @grey;
   }
 
-  > input.toc-toogle {
+  > input {
     display: none;
   }
 
-  > input.toc-toogle:checked ~ ul {
+  > input:checked ~ ul {
     display: none;
   }
 
-  > input.toc-toogle:checked ~ p.topic-title::before {
-    content: "\f146\00a0";
+  > input:checked ~ p.topic-title::before {
+    content: "\f0fe\00a0";
   }
 
   ul {
