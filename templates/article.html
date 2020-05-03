@@ -99,16 +99,5 @@
 {% endblock %}
 
 {% block additional_js %}
-<script>
-  (function () {
-    const topicTitle = document.querySelector('div.topic > p.topic-title');
-    const topicCheckbox = document.createElement('input');
-    topicCheckbox.type = 'checkbox';
-    topicCheckbox.classList.add('toc-toogle');
-    topicTitle.parentElement.insertBefore(topicCheckbox, topicTitle);
-    topicTitle.addEventListener('click', function () {
-      topicCheckbox.checked = !topicCheckbox.checked;  
-    });
-  })();
-</script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/min/article.min.js"></script>
 {% endblock %}
