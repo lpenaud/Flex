@@ -18,12 +18,12 @@ gulp.task('less', function () {
 });
 
 gulp.task('uglify', function () {
-    return gulp.src('./static/dark-theme/dark-theme.js')
+    return gulp.src('./static/js/*.js')
         .pipe(uglify())
         .pipe(rename({
             extname: '.min.js'
         }))
-        .pipe(gulp.dest('./static/dark-theme'));
+        .pipe(gulp.dest('./static/js/min'));
 });
 
 gulp.task('cp', function () {
