@@ -47,8 +47,17 @@
   {% endif %}
 
   <div>
-    {{ article.content }}
+    {% if article.toc %}
+    <div id="article-toc">
+      <p class="topic-title">Table of content</p>
+      {{article.toc}}
+    </div>
+    {% endif %}
+    <div>
+      {{ article.content }}
+    </div>
   </div>
+  
   <div class="tag-cloud">
     <p>
       {% if article.tags %}

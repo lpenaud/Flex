@@ -572,6 +572,13 @@ ul.social {
           padding: 2px;
         }
       }
+
+      div#article-toc {
+        float: right;
+        max-width: 300px;
+        margin-left: 4%;
+        margin-bottom: 1%;
+      }
     }
   }
 
@@ -589,6 +596,7 @@ div.admonition {
   margin-bottom: 2.5rem;
   border-radius: 4px;
   padding: 0.5em 1.25em 1.25em 1.25em;
+  clear: both;
 
   p.admonition-title::before {
     display: inline-block;
@@ -691,7 +699,8 @@ div.admonition.warning {
   background-color: @admonition-warning-bg-color;
 }
 
-div.topic {
+// Contents directives, toc generate by pelican-toc
+div.topic, div#article-toc {
   border: 1px solid @light-grey;
   border-radius: 4px;
   background-color: @light-grey;
@@ -705,32 +714,6 @@ div.topic {
     background-color: @med-grey;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    cursor: pointer;
-  }
-
-  > p.topic-title::before {
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    font-family: "Font Awesome 5 Free";
-    content: "\f146\00a0";
-    color: @light-grey;
-  }
-
-  > p.topic-title:hover::before {
-    color: @grey;
-  }
-
-  > input {
-    display: none;
-  }
-
-  > input:checked ~ ul {
-    display: none;
-  }
-
-  > input:checked ~ p.topic-title::before {
-    content: "\f0fe\00a0";
   }
 
   ul {
@@ -766,5 +749,31 @@ div.topic {
   li ul li ul > li a {
     padding-left: 4.5rem;
     font-size: .85em;
+  }
+}
+
+div.topic {
+  > p.topic-title {
+    cursor: pointer;
+  }
+
+  > p.topic-title::before {
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    font-family: "Font Awesome 5 Free";
+    content: "\f146\00a0";
+  }
+
+  > input {
+    display: none;
+  }
+
+  > input:checked ~ ul {
+    display: none;
+  }
+
+  > input:checked ~ p.topic-title::before {
+    content: "\f0fe\00a0";
   }
 }
