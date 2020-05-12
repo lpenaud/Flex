@@ -48,7 +48,11 @@
 
   <div>
     {% if article.toc %}
-    <div id="article-toc">
+    {% if TOC_FLOAT_LEFT %}
+    <div id="article-toc" class="float-left">
+    {% else %}
+    <div id="article-toc" class="float-right" >
+    {% endif %}
       <p class="topic-title">Table of content</p>
       {{article.toc}}
     </div>
