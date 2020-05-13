@@ -46,20 +46,19 @@
     </script>
   {% endif %}
 
+  {% if article.toc %}
+  {% if TOC_FLOAT %}
+  <div id="article-toc" class="toc-{{TOC_FLOAT}}">
+  {% else %}
+  <div id="article-toc">
+  {% endif %}
+    <p class="topic-title">{{ _('Table of content') }}</p>
+    {{article.toc}}
+  </div>
+  {% endif %}
+
   <div>
-    {% if article.toc %}
-    {% if TOC_FLOAT_LEFT %}
-    <div id="article-toc" class="float-left">
-    {% else %}
-    <div id="article-toc" class="float-right" >
-    {% endif %}
-      <p class="topic-title">Table of content</p>
-      {{article.toc}}
-    </div>
-    {% endif %}
-    <div>
-      {{ article.content }}
-    </div>
+    {{ article.content }}
   </div>
   
   <div class="tag-cloud">

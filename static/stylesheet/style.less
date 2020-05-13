@@ -572,19 +572,6 @@ ul.social {
           padding: 2px;
         }
       }
-
-      div#article-toc {
-        max-width: 300px;
-        margin-bottom: 1%;
-
-        &.float-right {
-          margin-left: 4%;
-        }
-
-        &.float-left {
-          margin-right: 4%;
-        }
-      }
     }
   }
 
@@ -594,6 +581,35 @@ ul.social {
 
   .ads-responsive {
     height: 90px;
+  }
+}
+
+// Bootstrap Large devices (desktops, 992px and up)
+@media screen and (min-width: 992px) {
+  div#article-toc {
+    &.toc-left, &.toc-right {
+      max-width: 300px;
+      margin-bottom: 1%;
+    }
+
+    &.toc-right {
+      margin-left: 1%;
+      float: right;
+    }
+
+    &.toc-left {
+      margin-right: 1%;
+      float: left;
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media screen and (min-width: 1200px) {
+  div#article-toc {
+    &.toc-left, &.toc-right {
+      max-width: none;
+    }
   }
 }
 
